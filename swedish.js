@@ -1,4 +1,11 @@
-var lexicon = {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"år"},
+var lexicon = {
+	"merry":"god",
+	"christmas":"jul",
+	"and":"och", 
+	"happy":"gott", 
+	"new":"nytt", 
+	"year":"år"
+	},
 
     english ="merry christmas and a happy new year",
     splitted = english.split(" "),
