@@ -1,0 +1,11 @@
+.container
+{
+	margin:0 auto;
+	width:900px;
+}
+
+#sidebar
+{
+	width:80px;
+	float:right;
+}

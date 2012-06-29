@@ -25,7 +25,7 @@ function countLetterRuns(params)
 	
 	for (var i=0; i < splittedArray.length; i++) 
 	{
-		
+	
 	};
 }
 

@@ -19,4 +19,4 @@ for(t in lexicon)
 	}
 }
 
-alert(temp);
+console.log(temp);
