@@ -5,7 +5,7 @@ function floatDiv(element)
 {
 	var foo = document.getElementById(element);
 	//console.log(foo.id);
-	console.log(foo.style);
+	console.log(foo.style.left);
 }
 
 floatDiv('sidebar');

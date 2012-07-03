@@ -2,10 +2,13 @@
 {
 	margin:0 auto;
 	width:900px;
+	border:1px solid red;
 }
 
 #sidebar
 {
 	width:80px;
+	height:80px;
 	float:right;
+	margin:0 auto;
 }
