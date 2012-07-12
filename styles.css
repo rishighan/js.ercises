@@ -1,9 +1,6 @@
-.container
+body
 {
-	margin:0 auto;
-	width:900px;
-	height:2000px;
-	border:1px solid red;
+	height:3000px;
 }
 
 #sidebar
@@ -12,4 +9,13 @@
 	height:80px;
 	float:right;
 	margin:0 auto;
+	border:1px solid red;
+	position:relative;
+}
+
+.xdiv
+{
+	border:1px solid black;
+	height:10px;
+	width:10px;
 }
