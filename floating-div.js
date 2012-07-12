@@ -6,14 +6,29 @@ function drawGrid(canvasID){
 	
 	var canvas = document.getElementById(canvasID),
 	    context = canvas.getContext('2d');
-	
-		context.fillStyle="#000";
+
 		context.beginPath();
-		context.moveTo(0,0);
-		context.lineTo(0,900);
+		context.moveTo(0,25);
+		context.lineTo(122,25);
+		context.lineTo(0,98);
+		context.lineTo(122,98);
+	
+		context.closePath();
+		context.fill();
 		
 		
 }
+
+// making an HTTP message
+function makeHTTPObject(){
+	try{
+		return new XMLHttpRequest();
+		catch(error){}
+		try {return new ACtiveXObject("Msxml2.XMLHTTP")}
+	}
+}
+var request = makeHTTPObject();
+request.open("GET", "http://rishighan.com/")
 
 function floatDiv(element)
 {

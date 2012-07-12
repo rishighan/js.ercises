@@ -13,6 +13,13 @@ body
 	position:relative;
 }
 
+#gridder
+{
+	height:900px;
+	width:900px;
+	border:1px solid red;
+}
+
 .xdiv
 {
 	border:1px solid black;
