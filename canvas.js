@@ -1,25 +1,24 @@
-// Rishi Ghan
-// File to control the canvas 
+var board = document.getElementById('board');
+console.log(board.id)
 
-
-window.onload = function(){
-	var canvas = document.getElementById("htmlcanvas");
-	var context = canvas.getContext("2d");
+var context = board.getContext("2d"),
+    x = 0, y =400,
+    radius = 10,
+startAngle = 0,
+endAngle = 360,
+counterClockwise = false;
+context.fillStyle = 'red';
+	//     for(var i=0; i<5; i++)
+	// {
+	// 	context.beginPath();
+	// 	context.rect(x, y, 200, 200);
+	// 	context.closePath();
+	// 	context.fill();
+	// }
+	for(var i=1; i<6; i++){
 	context.beginPath();
-    context.moveTo(100,150);
-    context.lineTo(450,50);
-	context.lineWidth= 5;
-    context.stroke();
-	context.lineCap = 'round';
+	 context.arc( (radius*i*10), y,  radius*i, startAngle, endAngle, counterClockwise);
 	
-	context.lineTo(0,0);
-	context.lineWidth= 1;
-    context.stroke();
-
-
-    for (var i=0; i < 361; i++) { 
-		context.beginPath();
-		context.arc(100, 100, 98, (1*Math.PI), (i*Math.PI), false);
-		context.stroke();
-    };
-}
+	 	context.fill();
+	
+	}

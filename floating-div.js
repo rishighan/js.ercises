@@ -10,9 +10,9 @@ function drawGrid(canvasID){
 		context.beginPath();
 		context.moveTo(0,25);
 		context.lineTo(122,25);
-		context.lineTo(0,98);
+		context.lineTo(12,98);
 		context.lineTo(122,98);
-	
+	    context.lineTo(98,87);
 		context.closePath();
 		context.fill();
 		
