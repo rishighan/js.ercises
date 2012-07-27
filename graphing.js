@@ -43,7 +43,8 @@ function Graphr (xdata, ydata, divid){
 		    counterclockwise = true;
 		
 		// loop through the angles array and draw arcs, bitch.
-	    // also show the edges of the pie slices ??
+	    // also show the edges of the pie slices ?
+	    
 	    for(var j=1; j<=angles.length;j++){
 		  context.beginPath(); 
 		  context.arc(x,y,radius,angles[j-1], angles[0], counterclockwise);
