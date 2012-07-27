@@ -62,6 +62,6 @@ function Graphr (xdata, divid){
 
 
 // testing
-var arr1= [20,40,90,20],
+var arr1= [20,10,40],
     g = new Graphr(arr1, "board");
 	g.pie();
