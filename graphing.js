@@ -7,6 +7,7 @@ function Graphr (xdata, divid){
 		percentages =[],
 		angles =[],
 		canvas = document.getElementById(divid);
+		
 	// unnecessary function	
 	this.kind = function() {console.log("pie")},
 	
@@ -23,34 +24,33 @@ function Graphr (xdata, divid){
 	this.pie =  function(){
 		 var totaldatapoints = this.sum(xdata);
 		 
-		 // loop through data points array and calculate percentages.
-		for (var i=0; i < xdata.length; i++) {
-			percentages[i] = Math.ceil((xdata[i]/totaldatapoints) *100); // percentages
-			angles[i] = Math.ceil((xdata[i]/totaldatapoints) *360)  //angles
-			console.log(angles[i]);
-		};
+	   // loop through data points array and calculate percentages.
+	  for (var i=0; i < xdata.length; i++) {
+	  	percentages[i] = Math.ceil((xdata[i]/totaldatapoints) *100); // percentages
+	  	angles[i] = Math.ceil((xdata[i]/totaldatapoints) *360)  //angles
+	  	console.log(angles[i]);
+	  };
 		
-		// find the fucking canvas element
-		context = canvas.getContext("2d");
+	  // find the fucking canvas element
+	  context = canvas.getContext("2d");
 		
-	    // co-ordinates (where should they be initialized ?)
-	    
-		var x = canvas.width / 2,
-		    y = canvas.height / 2,
-		    startAngle = 0,
-		    endAngle = 0,
-		    radius = 100, // this should be customizable.
-		    counterclockwise = true;
+	  // co-ordinates (where should they be initialized ?) 
+	  var x = canvas.width / 2,
+		  y = canvas.height / 2,
+		  startAngle = 0,
+		  endAngle = 0,
+		  radius = 100, // this should be customizable.
+		  counterclockwise = false;
 		
 		// loop through the angles array and draw arcs, bitch.
 	    // also show the edges of the pie slices ?
 	 
 
-		//draw a line back to the arc
-	    for(var j=1; j<=angles.length;j++){
+	  //draw a line back to the arc
+	  for(var j=1; j<=angles.length;j++){
 		  context.beginPath(); 
-		  context.lineTo(x,y);
 		  context.arc(x,y,radius,angles[j-1], angles[0], counterclockwise);
+		  context.lineTo(x,y);
 		  context.stroke();  
 	    };
 	context.closePath();
@@ -62,6 +62,6 @@ function Graphr (xdata, divid){
 
 
 // testing
-var arr1= [20,10,40],
+var arr1= [20,10,20],
     g = new Graphr(arr1, "board");
 	g.pie();
