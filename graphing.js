@@ -2,7 +2,7 @@
 // trying to create a general purpose graphing class 
 // july 26, 2012
 
-function Graphr (xdata, ydata, divid){
+function Graphr (xdata, divid){
 	var sum = 0,
 		percentages =[],
 		angles =[],
@@ -44,9 +44,12 @@ function Graphr (xdata, ydata, divid){
 		
 		// loop through the angles array and draw arcs, bitch.
 	    // also show the edges of the pie slices ?
-	    
+	 
+
+		//draw a line back to the arc
 	    for(var j=1; j<=angles.length;j++){
 		  context.beginPath(); 
+		  context.lineTo(x,y);
 		  context.arc(x,y,radius,angles[j-1], angles[0], counterclockwise);
 		  context.stroke();  
 	    };
@@ -59,9 +62,6 @@ function Graphr (xdata, ydata, divid){
 
 
 // testing
-var arr1= [12,3,45,22,334,22],
-	arr2 = [4,5,6];
-var g = new Graphr(arr1,arr2,"board");
-		g.kind(); // this is how you call a method.
-		g.ydatapoints(); // printing out the contents of an array
-		g.pie();
+var arr1= [20,40,90,20],
+    g = new Graphr(arr1, "board");
+	g.pie();
