@@ -40,7 +40,7 @@ function Graphr (xdata, divid){
 		  startAngle = 0,
 		  endAngle = 0,
 		  radius = 100, // this should be customizable.
-		  counterclockwise = false;
+		  counterclockwise = true;
 		
 		// loop through the angles array and draw arcs, bitch.
 	    // also show the edges of the pie slices ?
@@ -50,11 +50,8 @@ function Graphr (xdata, divid){
 	  for(var j=1; j<=angles.length;j++){
 		  context.beginPath(); 
 		  context.arc(x,y,radius,angles[j-1], angles[0], counterclockwise);
-<<<<<<< HEAD
 		  context.lineTo(x,y);
-=======
 		  //context.fillText(percentages[i]);
->>>>>>> added a jquery
 		  context.stroke();  
 	    };
 	context.closePath();
@@ -66,6 +63,6 @@ function Graphr (xdata, divid){
 
 
 // testing
-var arr1= [20,10,20],
+var arr1= [20,34,30],
     g = new Graphr(arr1, "board");
 	g.pie();
