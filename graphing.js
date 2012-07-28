@@ -50,7 +50,11 @@ function Graphr (xdata, divid){
 	  for(var j=1; j<=angles.length;j++){
 		  context.beginPath(); 
 		  context.arc(x,y,radius,angles[j-1], angles[0], counterclockwise);
+<<<<<<< HEAD
 		  context.lineTo(x,y);
+=======
+		  //context.fillText(percentages[i]);
+>>>>>>> added a jquery
 		  context.stroke();  
 	    };
 	context.closePath();
