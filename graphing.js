@@ -21,8 +21,8 @@ function Graphr (xdata, divid){
 	},
 	
 	// draws a pie chart when you supply an array and a canvas id
-	this.pie =  function(){
-		 var totaldatapoints = this.sum(xdata);
+	  this.pie =  function(){
+      var totaldatapoints = this.sum(xdata);
 		 
 	   // loop through data points array and calculate percentages.
 	  for (var i=0; i < xdata.length; i++) {
