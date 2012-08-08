@@ -25,9 +25,9 @@ var Calendar = function(){
 				if (month < 3) { month += 12; year -= 1; }
 				
 				h.push((q + parseInt(((month + 1) * 26) / 10) + year + parseInt(year / 4) + 6 * parseInt(year / 100) + parseInt(year / 400) - 1) % 7);
-				//console.log(h+"->"+ q);
 
 			};
+			
 			return h;
 		}
 		
@@ -47,8 +47,8 @@ var Calendar = function(){
 			weekdayname[i] = document.createTextNode(weekdays[i]); 
 			weekdayrow.appendChild(weekdaycolumn); // adding rows
 			weekdaycolumn.appendChild(weekdayname[i]);
-			
-		};
+			console.log("inside")
+		}
 	}
 	
 
