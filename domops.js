@@ -20,7 +20,7 @@ var Calendar = function(){
 				h = [];
 				//console.log(" Year: "+year+ " Month: "+ month + " Total Days: "+days);
 				
-			// Zeller's algorithm http://en.wikipedia.org/wiki/Zeller's_congruence
+			// Zeller's algorithm: http://en.wikipedia.org/wiki/Zeller's_congruence
 			for (var q = 1; q <= days; q++) {
 				if (month < 3) { month += 12; year -= 1; }
 				
@@ -28,32 +28,39 @@ var Calendar = function(){
 
 			};
 			
-			return h;
+			//return h;
 		}
 		
 		//print out the weekdays
 		var target = document.getElementById('parent'),
 			tab = document.createElement('table'),
-		    weekdayrow = document.createElement('tr'),
+		  
 			weekdayname = [];
-			
+			console.log(h.length)
 		    
 		    target.appendChild(tab); // add table
-			tab.appendChild(weekdayrow); // add weekday row
-			
+			for(var b = 0; b<5; b++)
+			{
+			   var weekdayrow = document.createElement('tr');
+			   tab.appendChild(weekdayrow); // add weekday row
+			};
+
 		for (var i=0; i < weekdays.length; i++) {
 			
 			var weekdaycolumn = document.createElement('td') // create a row
 			weekdayname[i] = document.createTextNode(weekdays[i]); 
 			weekdayrow.appendChild(weekdaycolumn); // adding rows
 			weekdaycolumn.appendChild(weekdayname[i]);
-			console.log("inside")
 		}
+
+		// start printing the dates corresponding to the weekday names
+
 	}
+	
 	
 
 }
 
 
 var cal = new Calendar;
-cal.buildMonth(8, 2012);
+cal.buildMonth(2, 2012);
