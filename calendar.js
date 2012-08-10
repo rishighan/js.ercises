@@ -34,27 +34,39 @@ var Calendar = function(){
 		//print out the weekdays
 		var target = document.getElementById('parent'),
 			tab = document.createElement('table'),
-		  
 			weekdayname = [];
-			console.log(h.length)
-		    
-		    target.appendChild(tab); // add table
-			for(var b = 0; b<5; b++)
+
+			//attach table to target
+			target.appendChild(tab);
+
+			//attach 5 rows to the table
+			for(var j=0; j<5; j++)
 			{
-			   var weekdayrow = document.createElement('tr');
-			   tab.appendChild(weekdayrow); // add weekday row
+				var row = document.createElement('tr');
+
+				tab.appendChild(row);
+			}
+
+			// get the first row
+			var firstRow = tab.getElementsByTagName('tr')[0],
+			    dayName = [], dayColumn;
+			// print the day names
+			for (var i = 0; i < weekdays.length; i++) {
+					// create text nodes to hold the day names
+					// and td to hold them
+					dayName[i] = document.createTextNode(weekdays[i]);
+				    dayColumn = document.createElement('td');
+					
+					// add them to the row
+					dayColumn.appendChild(dayName[i]);
+					firstRow.appendChild(dayColumn);
+				
 			};
 
-		for (var i=0; i < weekdays.length; i++) {
+			// printing out the dates.
 			
-			var weekdaycolumn = document.createElement('td') // create a row
-			weekdayname[i] = document.createTextNode(weekdays[i]); 
-			weekdayrow.appendChild(weekdaycolumn); // adding rows
-			weekdaycolumn.appendChild(weekdayname[i]);
-		}
-
-		// start printing the dates corresponding to the weekday names
-
+			console.log(firstRow)
+	
 	}
 	
 	
