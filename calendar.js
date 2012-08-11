@@ -64,7 +64,14 @@ var Calendar = function(){
 			};
 
 			// printing out the dates.
-			
+			for (var i = 0; i < h.length; i++) {
+				var date =[],
+				    dateColumn = document.createElement('td');
+				    // create text date and add it to the column
+					date[i] = document.createTextNode(i);
+					dateColumn.appendChild(date[i]);
+				h[i]
+			};
 			console.log(firstRow)
 	
 	}
