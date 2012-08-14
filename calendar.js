@@ -40,7 +40,7 @@ var Calendar = function(){
 			target.appendChild(tab);
 
 			//attach 5 rows to the table
-			for(var j=0; j<5; j++)
+			for(var j=0; j<6; j++)
 			{
 				var row = document.createElement('tr');
 
@@ -64,19 +64,32 @@ var Calendar = function(){
 			};
 
 			// printing out the dates.
-			for (var i = 0; i < h.length; i++) {
+			
+			var secondRow = tab.getElementsByTagName('tr')[1];
+				
+			for (var i = 1; i <= h.length; i++) {
 				var date =[],
 				    dateColumn = document.createElement('td');
 				    // create text date and add it to the column
 					date[i] = document.createTextNode(i);
 					dateColumn.appendChild(date[i]);
-				h[i]
+					//find the correct index here
+					
+					
+		
 			};
-			console.log(firstRow)
+			
 	
 	}
 	
-	
+	// element traversal function
+	// really want to get the index of the element whose parent I pass as an argument
+	this.find = function(parent, n)
+	{
+		// what type of element does this accept?
+		if(parent.firstElementChild) parent = parent.firstElementChild;
+		return parent;
+	}
 
 }
 
