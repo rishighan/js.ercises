@@ -83,7 +83,7 @@ var Calendar = function(){
 					}
 					else
 					{
-						tab.rows[j].appendChild(dateColumn);
+						console.log(tab.rows[j].cells[2]);
 						
 					}
 			};
@@ -91,14 +91,6 @@ var Calendar = function(){
 		
 	}
 	
-	// element traversal function
-	// really want to get the index of the element whose parent I pass as an argument
-	this.find = function(node, n)
-	{
-		// what type of element does this accept?
-		if(node instanceof HTMLTableElement) node = node.firstElementChild;
-		return parent;
-	}
 
 }
 
