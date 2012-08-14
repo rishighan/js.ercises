@@ -26,3 +26,20 @@ body
 	height:10px;
 	width:10px;
 }
+
+.calgrid
+{
+	border:1px solid red;
+	
+}
+
+.calgrid tr
+{
+	border:1px solid black;
+}
+
+.calgrid tr td
+{
+	padding:2px;
+	border:1px solid gray;
+}

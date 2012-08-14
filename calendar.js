@@ -35,15 +35,16 @@ var Calendar = function(){
 		var target = document.getElementById('parent'),
 			tab = document.createElement('table'),
 			weekdayname = [];
-
+			
+			// set styling
+			tab.className = 'calgrid';
 			//attach table to target
 			target.appendChild(tab);
 
 			//attach 5 rows to the table
-			for(var j=0; j<6; j++)
+			for(var j=0; j<=6; j++)
 			{
 				var row = document.createElement('tr');
-
 				tab.appendChild(row);
 			}
 
@@ -62,32 +63,40 @@ var Calendar = function(){
 					firstRow.appendChild(dayColumn);
 				
 			};
-
-			// printing out the dates.
 			
-			var secondRow = tab.getElementsByTagName('tr')[1];
-				
-			for (var i = 1; i <= h.length; i++) {
+			
+			// printing out the dates.
+			for (var i = 0, j=1; i <= h.length; i++) {
 				var date =[],
 				    dateColumn = document.createElement('td');
 				    // create text date and add it to the column
 					date[i] = document.createTextNode(i);
 					dateColumn.appendChild(date[i]);
-					//find the correct index here
 					
-					
-		
+					// try to get things right
+					if(i%7===0)
+					{
+						// turn to the next row?
+						// how?
+						tab.rows[j].nextElementSibling.appendChild(dateColumn);
+						j++;
+					}
+					else
+					{
+						tab.rows[j].appendChild(dateColumn);
+						
+					}
 			};
 			
-	
+		
 	}
 	
 	// element traversal function
 	// really want to get the index of the element whose parent I pass as an argument
-	this.find = function(parent, n)
+	this.find = function(node, n)
 	{
 		// what type of element does this accept?
-		if(parent.firstElementChild) parent = parent.firstElementChild;
+		if(node instanceof HTMLTableElement) node = node.firstElementChild;
 		return parent;
 	}
 
@@ -95,4 +104,4 @@ var Calendar = function(){
 
 
 var cal = new Calendar;
-cal.buildMonth(2, 2012);
+cal.buildMonth(8, 2012);
