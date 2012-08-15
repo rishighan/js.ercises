@@ -40,7 +40,7 @@ var Calendar = function(){
 			weekdayname = [];
 			
 			// month and year on the top status bar
-			statusBar.textContent = months[2]+" "+year;
+			statusBar.textContent = months[month]+" "+year;
 			target.appendChild(statusBar);
 			console.log(months[month]);
 			
@@ -126,4 +126,4 @@ var Calendar = function(){
 
 // This is how you call it.
 var cal = new Calendar;
-cal.buildMonth(2, 2012);
+cal.buildMonth(3, 2012);
