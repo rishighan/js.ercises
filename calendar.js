@@ -1,4 +1,4 @@
-// DOM manipulation exercises.
+// Calendar, yo.
 // Rishi Ghan
 
 // August 6, 2012
@@ -21,13 +21,13 @@ var Calendar = function(){
 				
 			// Zeller's algorithm: http://en.wikipedia.org/wiki/Zeller's_congruence
 			for (var q = 1; q <= days; q++) {
-				if (month < 3) { month += 12; year -= 1; }
+				if (month < 3) { month += 12; year -= 1; } 
 				
 				h.push((q + parseInt(((month + 1) * 26) / 10) + year + parseInt(year / 4) + 6 * parseInt(year / 100) + parseInt(year / 400) - 1) % 7);
 
 			};
 			
-			//return h; //default [0,1,2,3,4,5,6]
+			//return h; // necessary ?
 		}
 		
 		//print out the weekdays
@@ -65,16 +65,20 @@ var Calendar = function(){
 			
 			
 			// printing out the dates.
+			// Dirty hack here, h[0] is used to calculate the offset
 			for (var i = 1, j=1, pos = 0; i <= h.length + h[0]; i++, pos++) {
+				
 				var date =[], blankNode = [],
 				    dateColumn = document.createElement('td');
-				    // create text date and add it to the column
-					
+				    
+				   // create text date and add it to the column	
 					date[i] = document.createTextNode(i-h[0]); 
 					blankNode  = document.createTextNode(' ');
+					
 					//dateColumn.appendChild(date[i]);
+					
 					// do insertAt
-					console.log(h);
+					// depending on the offset, insert date into td
 					if(pos < h[0])
 					{
 						insertAt(dateColumn, blankNode, pos);
@@ -85,13 +89,11 @@ var Calendar = function(){
 						insertAt(dateColumn, date[i],  pos)
 				    }
 				
-					// try to get things right
+					// decide if a new row should be started
 					if(i%7===0)
 					{
-						// turn to the next row?
-						// how?
 						insertAt(tab.rows[j], dateColumn, pos);
-						j++;
+						j++; // turn to the next row
 					}
 					else
 					{
@@ -99,12 +101,11 @@ var Calendar = function(){
 						
 						
 					}
-				
-					
+	
 			};
 
 	}
-	//study this.
+	//insert at an index
 	function insertAt(parent, child, n)
 	{
 		parent.insertBefore(child, parent.childNodes[n]);
@@ -112,6 +113,6 @@ var Calendar = function(){
 
 }
 
-
+// This is how you call it.
 var cal = new Calendar;
-cal.buildMonth(9, 2012);
+cal.buildMonth(9, 2013);
