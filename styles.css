@@ -29,17 +29,19 @@ body
 
 .calgrid
 {
-	border:1px solid red;
+	font-family:'arial', helvetica, sans-serif;
+	color:#FFF;
 	
 }
 
-.calgrid tr
-{
-	border:1px solid black;
-}
 
 .calgrid tr td
 {
-	padding:2px;
-	border:1px solid gray;
+	padding:5px;
+	background:#CCC;
+}
+
+.calgrid tr td.weekends
+{
+	color:red;
 }

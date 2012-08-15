@@ -11,7 +11,9 @@ var Calendar = function(){
 		var args = arguments.length,
 		    month = month || 0,
 		    year = year || new Date().getFullYear(), 
-		    weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+		    weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+			months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		
 		if(typeof(month)==='number' && typeof(year) === 'number')
 		{
 			// this just finds out how many days a month has 
@@ -20,6 +22,7 @@ var Calendar = function(){
 				//console.log(" Year: "+year+ " Month: "+ month + " Total Days: "+days);
 				
 			// Zeller's algorithm: http://en.wikipedia.org/wiki/Zeller's_congruence
+			// returns an array of indices, 0 for Sunday, 1 for Monday and so on.
 			for (var q = 1; q <= days; q++) {
 				if (month < 3) { month += 12; year -= 1; } 
 				
@@ -30,10 +33,16 @@ var Calendar = function(){
 			//return h; // necessary ?
 		}
 		
-		//print out the weekdays
-		var target = document.getElementById('parent'),
+		//print out the weekday
+		var statusBar = document.createElement('div'),
+			target = document.getElementById('parent'),
 			tab = document.createElement('table'),
 			weekdayname = [];
+			
+			// month and year on the top status bar
+			statusBar.textContent = months[month-1]+" "+year;
+			target.appendChild(statusBar);
+			
 			
 			// set styling
 			tab.className = 'calgrid';
@@ -72,8 +81,8 @@ var Calendar = function(){
 				    dateColumn = document.createElement('td');
 				    
 				   // create text date and add it to the column	
-					date[i] = document.createTextNode(i-h[0]); 
-					blankNode  = document.createTextNode(' ');
+					date[i] = document.createTextNode(i-h[0]); // dirty, dirty hack.
+					blankNode  = document.createTextNode(' '); // same here, inserting blank nodes
 					
 					//dateColumn.appendChild(date[i]);
 					
@@ -115,4 +124,4 @@ var Calendar = function(){
 
 // This is how you call it.
 var cal = new Calendar;
-cal.buildMonth(9, 2013);
+cal.buildMonth(8, 2012);
