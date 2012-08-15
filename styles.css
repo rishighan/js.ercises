@@ -39,9 +39,10 @@ body
 {
 	padding:5px;
 	background:#CCC;
+	text-align:center;
 }
 
 .calgrid tr td.weekends
 {
-	color:red;
+	background:#999;
 }

@@ -40,9 +40,9 @@ var Calendar = function(){
 			weekdayname = [];
 			
 			// month and year on the top status bar
-			statusBar.textContent = months[month-1]+" "+year;
+			statusBar.textContent = months[2]+" "+year;
 			target.appendChild(statusBar);
-			
+			console.log(months[month]);
 			
 			// set styling
 			tab.className = 'calgrid';
@@ -102,11 +102,13 @@ var Calendar = function(){
 					if(i%7===0)
 					{
 						insertAt(tab.rows[j], dateColumn, pos);
+						dateColumn.className = 'weekends'; //coloring the weekend cells
 						j++; // turn to the next row
 					}
 					else
 					{
-						insertAt(tab.rows[j], dateColumn, pos)
+						if(i%7 ===1 && dateColumn.textContent!== ' ') dateColumn.className ='weekends';
+						insertAt(tab.rows[j], dateColumn, pos);
 						
 						
 					}
@@ -124,4 +126,4 @@ var Calendar = function(){
 
 // This is how you call it.
 var cal = new Calendar;
-cal.buildMonth(8, 2012);
+cal.buildMonth(2, 2012);
