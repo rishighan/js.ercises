@@ -34,6 +34,11 @@ body
 	
 }
 
+.statusBar
+{
+	text-align: center;
+}
+
 
 .calgrid tr td
 {

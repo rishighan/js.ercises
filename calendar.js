@@ -39,7 +39,11 @@ var Calendar = function(){
 			tab = document.createElement('table'),
 			weekdayname = [];
 			
+			//set some styling for the target container
+			target.style.width ='224px';
+
 			// month and year on the top status bar
+			statusBar.className = 'statusBar';
 			statusBar.textContent = months[month]+" "+year;
 			target.appendChild(statusBar);
 			console.log(months[month]);
