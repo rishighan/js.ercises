@@ -37,6 +37,8 @@ body
 .statusBar
 {
 	text-align: center;
+	font-family:'Helvetica';
+	color:red;
 }
 
 

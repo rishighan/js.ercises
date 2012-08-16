@@ -33,20 +33,27 @@ var Calendar = function(){
 			//return h; // necessary ?
 		}
 		
-		//print out the weekday
+		// Create status bar, table with weekdays and dates.
 		var statusBar = document.createElement('div'),
 			target = document.getElementById('parent'),
 			tab = document.createElement('table'),
-			weekdayname = [];
+			weekdayname = [],
 			
-			//set some styling for the target container
+			// left and right arrows for month navigation
+			left = document.createTextNode("\u27F5 "), right = document.createTextNode(" \u27F6");
+			
+			//set some styling 
 			target.style.width ='224px';
-
+			
 			// month and year on the top status bar
 			statusBar.className = 'statusBar';
 			statusBar.textContent = months[month]+" "+year;
 			target.appendChild(statusBar);
-			console.log(months[month]);
+			statusBar.insertBefore(left, statusBar.childNodes[0]);
+			statusBar.appendChild(right);
+			
+			// arrows
+			//statusBar.appendChild(left);
 			
 			// set styling
 			tab.className = 'calgrid';
@@ -126,6 +133,20 @@ var Calendar = function(){
 		parent.insertBefore(child, parent.childNodes[n]);
 	}
 
+    function navigateMonth(direction)
+	{
+		switch(direction)
+		{
+			case 'next':
+			
+			break;
+			
+			case 'previous':
+			
+			break;
+			
+		}
+	}
 }
 
 // This is how you call it.
