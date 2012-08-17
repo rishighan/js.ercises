@@ -6,7 +6,7 @@
 var Calendar = function(){
 	
 	// build a month with weekdays, weekends etc.
-	this.buildMonth =function(month,year){
+	this.build =function(month,year){
 		
 		var args = arguments.length,
 		    month = month || 0,
@@ -40,7 +40,12 @@ var Calendar = function(){
 			weekdayname = [],
 			
 			// left and right arrows for month navigation
-			left = document.createTextNode("\u27F5 "), right = document.createTextNode(" \u27F6");
+	  		//create the link tag
+			anchorLeft= document.createElement('span');
+			anchorRight =document.createElement('span');
+			
+			anchorLeft.textContent = "\u27F5";
+			anchorRight.textContent = "\u27F6";
 			
 			//set some styling 
 			target.style.width ='224px';
@@ -49,12 +54,16 @@ var Calendar = function(){
 			statusBar.className = 'statusBar';
 			statusBar.textContent = months[month]+" "+year;
 			target.appendChild(statusBar);
-			statusBar.insertBefore(left, statusBar.childNodes[0]);
-			statusBar.appendChild(right);
 			
-			// arrows
-			//statusBar.appendChild(left);
 			
+			// insert into status bar
+			statusBar.insertBefore(anchorLeft, statusBar.childNodes[0]);
+			statusBar.appendChild(anchorRight);
+			
+			// attach click handlers
+			anchorLeft.addEventListener("click", this.navigateMonth, false);
+			anchorRight.onclick = function(){console.log("Right")};	
+				
 			// set styling
 			tab.className = 'calgrid';
 			//attach table to target
@@ -133,22 +142,13 @@ var Calendar = function(){
 		parent.insertBefore(child, parent.childNodes[n]);
 	}
 
-    function navigateMonth(direction)
+    this.navigateMonth = function(direction)
 	{
-		switch(direction)
-		{
-			case 'next':
-			
-			break;
-			
-			case 'previous':
-			
-			break;
-			
-		}
+		console.log(month);
+		
 	}
 }
 
 // This is how you call it.
 var cal = new Calendar;
-cal.buildMonth(3, 2012);
+cal.build(3, 2012);
