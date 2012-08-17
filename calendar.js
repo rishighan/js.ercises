@@ -52,7 +52,7 @@ var Calendar = function(){
 			
 			// month and year on the top status bar
 			statusBar.className = 'statusBar';
-			statusBar.textContent = months[month]+" "+year;
+			statusBar.textContent = months[--month]+" "+year;
 			target.appendChild(statusBar);
 			
 			
@@ -61,7 +61,7 @@ var Calendar = function(){
 			statusBar.appendChild(anchorRight);
 			
 			// attach click handlers
-			anchorLeft.addEventListener("click", this.navigateMonth, false);
+			anchorLeft.addEventListener("click", navigateMonth, false);
 			anchorRight.onclick = function(){console.log("Right")};	
 				
 			// set styling
@@ -134,6 +134,12 @@ var Calendar = function(){
 					}
 	
 			};
+			
+			function navigateMonth(direction)
+			{
+				console.log(month);
+				
+			}
 
 	}
 	//insert at an index
@@ -142,13 +148,9 @@ var Calendar = function(){
 		parent.insertBefore(child, parent.childNodes[n]);
 	}
 
-    this.navigateMonth = function(direction)
-	{
-		console.log(month);
-		
-	}
+  
 }
 
 // This is how you call it.
 var cal = new Calendar;
-cal.build(3, 2012);
+cal.build(6, 2012);
