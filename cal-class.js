@@ -53,7 +53,7 @@ Calendar.prototype = {
 	 },
 
 
-	buildTable: function()
+	buildTable: function(month, year)
 	{
 		// Create status bar, table with weekdays and dates.
 		
@@ -156,7 +156,8 @@ Calendar.prototype = {
 
 	navigateMonth: function(month, year){
 
-		console.log(month);
+		
+
 	
 	}
 
@@ -164,7 +165,7 @@ Calendar.prototype = {
 
 var cal = new Calendar(5, 2012);
 cal.daysForDates(5,2012);
-cal.buildTable();
+cal.buildTable(5,2012);
 cal.printDates();
 
   

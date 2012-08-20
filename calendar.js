@@ -138,6 +138,7 @@ var Calendar = function(){
 			function navigateMonth(direction)
 			{
 				console.log(month);
+				build(month++, year)
 				
 			}
 
