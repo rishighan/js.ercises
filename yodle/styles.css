@@ -43,3 +43,9 @@ section#reviews ul li{
     height:20px;
     border:1px solid #CCC;
 }
+
+.rating-bar-outer .bar{
+    background:#CCC;
+    height:20px;
+    width:0px;
+}

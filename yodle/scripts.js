@@ -82,9 +82,23 @@ Ratings.prototype = {
 
   },
 
-  calculateAvgWidth: function(num, total, width){
-    var result = Math.floor((num/total)*width)
-    return result;
+  calculateAvgWidth: function(attr){
+
+    var max =0, width =0,
+        bars = this.getElementsByAttr(attr),
+        totalBars = bars.length;
+
+    for(var i =0; i<totalBars; i++){
+        max = Math.max(max, Number(bars[i].getAttribute(attr)));
+
+        width = (bars[i].getAttribute(attr) * 150) / max;
+
+        bars[i].style.width = width+"px";
+    }
+  },
+
+  findMax: function(arr){
+   return Math.max.apply(Math, arr);
   }
 
 
@@ -93,7 +107,7 @@ Ratings.prototype = {
 
 var foo = new Ratings(opts);
 foo.renderStars();
-console.log(foo.getElementsByAttr("data-rating-total"))
+foo.calculateAvgWidth('data-rating-total')
 });
 
 
