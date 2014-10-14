@@ -5,7 +5,9 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script type="text/javascript" src="scripts.js"> </script>
     <script type="text/javascript">
-    var opts = {container: "ratings-container"}
+    var opts = {
+        container: document.body
+    }
     </script>
 
 </head>
@@ -14,7 +16,7 @@
 <header>
 
 </header>
-
+<div id="container">
 <section id="reviews">
 
     <ul id="ratings-container">
@@ -42,7 +44,59 @@
 
 </section>
 <div id="sidebar">
+<div class="sidebar-header">
+<h4>3 Customer Reviews</h4>
+</div>
+
+<span data-rating="3.5"></span>
+<span><h5>3.5 Average</h5></span>
+<ul>
+    <li> 5 stars
+        <div class="rating-bar-outer">
+            <div data-rating-total="1"></div>
+        </div>
+    </li>
+
+    <li> 4 stars
+        <div class="rating-bar-outer">
+            <div data-rating-total="1"></div>
+        </div>
+    </li>
+
+    <li> 3 stars
+        <div class="rating-bar-outer">
+            <div data-rating-total="0"></div>
+        </div>
+    </li>
+
+    <li> 2 stars
+        <div class="rating-bar-outer">
+            <div data-rating-total="1"></div>
+        </div>
+    </li>
+
+    <li> 1 star
+        <div class="rating-bar-outer">
+            <div data-rating-total="0"></div>
+        </div>
+    </li>
+</ul>
+
+<div id="sidebar-filter-website">
 
 </div>
+
+<div id="sidebar-filter-reviews">
+
+</div>
+
+
+
+<div id=""></div>
+
+
+</div>
+</div>
+
 </body>
 </html>

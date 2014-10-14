@@ -19,7 +19,7 @@ addEvent(window, 'load', function(){
 
 function Ratings(opts){
     // config
-    this.container =  document.getElementById("ratings-container") || this.opts.container;
+    this.container =  document.body || this.opts.container;
     this.ratingAttr = "data-rating" || this.opts.ratingAttr,
     this.filled_star_graphic = "filled.png" || this.opts.filled_star_graphic,
     this.half_star_graphic = "half.png" || this.opts.half_star_graphic;
@@ -56,7 +56,7 @@ Ratings.prototype = {
 
   // Get the DOM elements matching the specified attribute
   // return an array of positive matches
-  // Currently the search area is narrowed to the container
+  // Currently the search area is the body, but can be narrowed down in the config
   getElementsByAttr: function(attr){
     var matches =[],
         scope = this.container.getElementsByTagName('*'),
@@ -82,8 +82,9 @@ Ratings.prototype = {
 
   },
 
-  calculateAverage: function(){
-
+  calculateAvgWidth: function(num, total, width){
+    var result = Math.floor((num/total)*width)
+    return result;
   }
 
 
@@ -92,7 +93,7 @@ Ratings.prototype = {
 
 var foo = new Ratings(opts);
 foo.renderStars();
-
+console.log(foo.getElementsByAttr("data-rating-total"))
 });
 
 
