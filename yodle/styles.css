@@ -12,6 +12,11 @@ section#reviews{
     width:650px;
 }
 
+section#reviews .date{
+    font-style: italic;
+    font-size: 0.9em;
+
+}
 section#reviews ul, #sidebar ul{
     list-style:none;
 }
@@ -36,6 +41,10 @@ section#reviews ul li{
     height:30px;
     padding:10px;
 
+}
+
+#sidebar-inner{
+    padding:10px;
 }
 
 .rating-bar-outer{

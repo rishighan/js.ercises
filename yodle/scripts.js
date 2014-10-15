@@ -1,5 +1,6 @@
-// scripts.js
+// Yodle Test
 // Rishi Ghan
+// Oct 14, 2014
 
 // init like this:
 // var foo = new Ratings(opts)
@@ -16,7 +17,7 @@ function addEvent(to, type, fn){
     }
 };
 
-
+// Attach the function to DOM load
 addEvent(window, 'load', function(){
 
 function Ratings(opts){
@@ -110,8 +111,9 @@ Ratings.prototype = {
   },
 
   // For the aggregate rating bars
-  // Determines the max number of ratings for a particular star
-  // and then calculates the width of the bar for each star
+  // Determines the max ratings for a particular star
+  // and then calculates the width of the bar for each star, using the max value
+
   // To test: change the "data-rating-total" attribute in the HTML
   // To change color, supply bar_color in config like so: var opts ={bar_color: "#FFFCC"}
   calculateAvgWidth: function(attr){
