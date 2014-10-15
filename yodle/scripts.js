@@ -21,12 +21,13 @@ addEvent(window, 'load', function(){
 
 function Ratings(opts){
     // config
-    this.container              =  document.body || this.opts.container;
-    this.ratingAttr             = "data-rating" || this.opts.ratingAttr,
-    this.ratingMax              = 5 || this.opts.ratingMax,
-    this.filled_star_graphic    = "img/filled-star.jpg" || this.opts.filled_star_graphic,
-    this.half_star_graphic      = "img/half.jpg" || this.opts.half_star_graphic,
-    this.empty_star_graphic     = "img/empty.jpg" || this.opts.empty_star_graphic;
+    this.container              = opts.container || document.body,
+    this.ratingAttr             = opts.ratingAttr || "data-rating",
+    this.ratingMax              = opts.ratingMax || 5,
+    this.filled_star_graphic    = opts.filled_star_graphic || "img/filled-star.jpg",
+    this.half_star_graphic      = opts.half_star_graphic || "img/half.jpg",
+    this.empty_star_graphic     = opts.empty_star_graphic || "img/empty.jpg",
+    this.bar_color              = opts.bar_color || "#CCC";
 }
 
 Ratings.prototype = {
@@ -112,6 +113,7 @@ Ratings.prototype = {
   // Determines the max number of ratings for a particular star
   // and then calculates the width of the bar for each star
   // To test: change the "data-rating-total" attribute in the HTML
+  // To change color, supply bar_color in config like so: var opts ={bar_color: "#FFFCC"}
   calculateAvgWidth: function(attr){
 
     var max =0, width =0, values = [],
@@ -130,6 +132,7 @@ Ratings.prototype = {
     for(var j =0; j< totalBars; j++){
         width = (bars[j].getAttribute(attr) * 150) / max;
         bars[j].style.width = width+"px";
+        bars[j].style.backgroundColor = this.bar_color;
     }
   },
 
