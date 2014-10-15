@@ -21,13 +21,13 @@ addEvent(window, 'load', function(){
 
 function Ratings(opts){
     // config
-    this.container              = opts.container || document.body,
-    this.ratingAttr             = opts.ratingAttr || "data-rating",
-    this.ratingMax              = opts.ratingMax || 5,
-    this.filled_star_graphic    = opts.filled_star_graphic || "img/filled-star.jpg",
+    this.container              = opts.container || document.body, // container to search for elements in
+    this.ratingAttr             = opts.ratingAttr || "data-rating", // the name of the attribute for ratings
+    this.ratingMax              = opts.ratingMax || 5,  // set the max rating, 5, 10 and so on
+    this.filled_star_graphic    = opts.filled_star_graphic || "img/filled-star.jpg", // assets for star graphics
     this.half_star_graphic      = opts.half_star_graphic || "img/half.jpg",
     this.empty_star_graphic     = opts.empty_star_graphic || "img/empty.jpg",
-    this.bar_color              = opts.bar_color || "#CCC";
+    this.bar_color              = opts.bar_color || "#CCC"; // color for aggregate bars
 }
 
 Ratings.prototype = {
@@ -109,7 +109,7 @@ Ratings.prototype = {
 
   },
 
-  // for the average rating bars
+  // For the aggregate rating bars
   // Determines the max number of ratings for a particular star
   // and then calculates the width of the bar for each star
   // To test: change the "data-rating-total" attribute in the HTML
