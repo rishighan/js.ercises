@@ -47,10 +47,25 @@ section#reviews ul li{
     padding:10px;
 }
 
+#sidebar-inner ul{
+    margin:0;
+    padding:0;
+}
+
+#sidebar-inner ul li span{
+
+    display:block;
+    position:relative;
+    margin-right:30px;
+}
+
+
+
 .rating-bar-outer{
-    width:200px;
+    width:150px;
     height:20px;
     border:1px solid #CCC;
+    margin:-20px 0 10px 60px;
 }
 
 .rating-bar-outer .bar{

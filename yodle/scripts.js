@@ -132,7 +132,7 @@ Ratings.prototype = {
 
     // calculate the width
     for(var j =0; j< totalBars; j++){
-        width = (bars[j].getAttribute(attr) * 150) / max;
+        width = (bars[j].getAttribute(attr) * 100) / max;
         bars[j].style.width = width+"px";
         bars[j].style.backgroundColor = this.bar_color;
     }
