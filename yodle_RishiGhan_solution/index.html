@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script type="text/javascript" src="scripts.js"> </script>
     <script type="text/javascript">
+    // Change the bar color here
     var opts = {
         container: document.body,
         bar_color: "#CCC"
@@ -14,27 +15,42 @@
 </head>
 <body>
 
-<header>
 
-</header>
 <div id="container">
+<header id="header">
+    <h2>HEADER</h2>
+</header>
+
+<div id="breadcrumbs">
+<a href="">Launchpad</a> > Reviews
+</div>
+
+
+<h1>Reviews</h1>
 <section id="reviews">
 
     <ul id="ratings-container">
         <li>
+            <!-- Adjust the data-rating attribute here to see the changes -->
             <span data-rating="5"></span> <span class="date">December 16, 2011</span>
-            <h3>Best Restaurant Ever</h3>
+            <h4>Best Restaurant Ever</h4>
             <p>Food is amazing, staff is friendly.</p>
+
+            <div class="author"> - <a href="">qa</a></div>
          </li>
         <li>
             <span data-rating="4.5"></span> <span class="date">December 15, 2011</span>
-            <h3>Pretty good food</h3>
+            <h4>Pretty good food</h4>
             <p>Food is amazing, staff is friendly.</p>
+
+            <div class="author"> - <a href="">qa</a></div>
          </li>
          <li>
             <span data-rating="3"></span> <span class="date">December 14, 2011</span>
-            <h3>Best Restaurant Ever</h3>
+            <h4>Don't go here</h4>
             <p>Food is amazing, staff is friendly.</p>
+            <div class="author"> - <a href="">qa</a></div>
+
          </li>
 
     </ul>
@@ -45,58 +61,89 @@
 <div id="sidebar">
 
 <div class="sidebar-header">
-<h4>3 Customer Reviews</h4>
+<h3>3 Customer Reviews</h3>
 </div>
 
 <div id="sidebar-inner">
+
+<div id="sidebar-rating-avg">
 <span data-rating="3.5"></span>
-<span><h5>3.5 Average</h5></span>
+<span><h4>3.5 Average</h4></span>
+</div>
+
+<div class="clearfix"></div>
+<!-- Aggeregate Ratings -->
 <ul>
-    <li> <span>5 stars</span>
+    <li> <span class="rating-stars">5 stars</span>
         <div class="rating-bar-outer">
             <div data-rating-total="1" class="bar"></div>
         </div>
+        <span>(1)</span>
     </li>
 
-    <li> <span>4 stars</span>
+    <li> <span class="rating-stars">4 stars</span>
         <div class="rating-bar-outer">
             <div data-rating-total="1" class="bar"></div>
         </div>
+        <span>(1)</span>
     </li>
 
-    <li> <span>3 stars</span>
+    <li> <span class="rating-stars">3 stars</span>
         <div class="rating-bar-outer">
             <div data-rating-total="0" class="bar"></div>
         </div>
+        <span>(1)</span>
     </li>
 
-    <li> 2 stars
+    <li><span class="rating-stars">2 stars</span>
         <div class="rating-bar-outer">
             <div data-rating-total="1" class="bar"></div>
         </div>
+        <span>(1)</span>
     </li>
 
-    <li> 1 star
+    <li><span class="rating-stars">1 star</span>
         <div class="rating-bar-outer">
             <div data-rating-total="0" class="bar"></div>
         </div>
+        <span>(1)</span>
     </li>
 </ul>
 
-<div id="sidebar-filter-website">
+<div id="sidebar-filter-website" class="clearfix">
+<h4>Filter By Website:</h4>
+<ul>
+    <li><a href="http://yelp.com">yelp</a> (3)</li>
+</ul>
 
 </div>
 
 <div id="sidebar-filter-reviews">
+<h4>Filter By Number of Stars:</h4>
+
+<ul>
+    <li><a href="">5 stars</a> (1)</li>
+    <li><a href="">4 stars</a> (1)</li>
+    <li><a href="">3 stars</a> </li>
+    <li><a href="">2 stars</a> (1)</li>
+    <li><a href="">1 star</a> </li>
+</ul>
 
 </div>
 
 
 
-<div id=""></div>
+<div>
+    <ul>
+        <li><h5>Show All Reviews</h5></li>
+    </ul>
+</div>
 
 </div>
 </div>
+
+<footer>Copyright 2005-2011 Yodle Inc. All Rights Reserved</footer>
+
 </div>
 
 </body>
